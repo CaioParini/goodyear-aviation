@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)file:///C:/Users/ac03086/Downloads/index_3.html -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Goodyear Aviation</title>
+  <link href="./index_files/css2" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #FEDB00;
+      --gold-light: #FFE84D;
+      --dark: #001A3A;
+      --dark2: #00265A;
+      --dark3: #003070;
+      --gray: #003580;
+      --text: #E8F0FF;
+      --text-muted: #7AA0D4;
+      --white: #FFFFFF;
+      --blue: #004EA8;
+      --blue-light: #0060CC;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 24px;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 50% 40%, #003580 0%, var(--dark) 70%);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(0,78,168,0.15) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(0,78,168,0.15) 40px);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(254,219,0,0.12);
+      border: 1px solid rgba(254,219,0,0.4);
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 2px;
+      margin-bottom: 40px;
+    }
+
+    .logo-block {
+      margin-bottom: 32px;
+    }
+
+    .logo-block .brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(60px, 12vw, 120px);
+      color: var(--white);
+      line-height: 0.9;
+      letter-spacing: 4px;
+    }
+
+    .logo-block .sub {
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 6px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    .hero-division {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+    }
+
+    .hero-headline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(36px, 7vw, 72px);
+      line-height: 1;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .hero-headline span { color: var(--gold); }
+
+    .hero-sub {
+      font-size: clamp(13px, 2vw, 16px);
+      color: var(--text-muted);
+      max-width: 560px;
+      line-height: 1.7;
+      margin: 24px auto 48px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 64px;
+    }
+
+    .hero-tag {
+      background: rgba(254,219,0,0.1);
+      border: 1px solid rgba(254,219,0,0.3);
+      color: var(--gold-light);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 2px;
+      letter-spacing: 1px;
+    }
+
+    .stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      border: 1px solid rgba(254,219,0,0.2);
+      border-radius: 4px;
+      overflow: hidden;
+      max-width: 700px;
+      width: 100%;
+    }
+
+    .stat {
+      flex: 1;
+      min-width: 140px;
+      padding: 24px 20px;
+      text-align: center;
+      border-right: 1px solid rgba(254,219,0,0.15);
+      background: rgba(0,26,58,0.5);
+    }
+
+    .stat:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 40px;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 100px 24px; }
+
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .section-title em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 600px;
+      line-height: 1.75;
+    }
+
+    /* ── MISSION ── */
+    .mission {
+      background: var(--dark2);
+      border-top: 1px solid rgba(254,219,0,0.12);
+      border-bottom: 1px solid rgba(254,219,0,0.12);
+    }
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) { .mission-grid { grid-template-columns: 1fr; gap: 48px; } }
+
+    .mission-features {
+      display: grid;
+      gap: 28px;
+      margin-top: 0;
+    }
+
+    .feature-card {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 28px;
+      background: rgba(254,219,0,0.05);
+      border: 1px solid rgba(254,219,0,0.12);
+      border-radius: 4px;
+      transition: border-color 0.3s;
+    }
+
+    .feature-card:hover { border-color: rgba(254,219,0,0.5); }
+
+    .feature-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .feature-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .feature-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ── GUARANTEE BANNER ── */
+    .guarantee-banner {
+      background: linear-gradient(135deg, rgba(254,219,0,0.15), rgba(254,219,0,0.05));
+      border: 1px solid rgba(254,219,0,0.35);
+      border-radius: 4px;
+      padding: 32px 40px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .guarantee-icon { font-size: 40px; flex-shrink: 0; }
+
+    .guarantee-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      color: var(--gold);
+      letter-spacing: 1px;
+    }
+
+    .guarantee-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-top: 4px;
+    }
+
+    /* ── PRODUCTS ── */
+    .products { background: var(--dark); }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2px;
+      margin-top: 60px;
+      border: 1px solid rgba(254,219,0,0.15);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .product-card {
+      background: var(--dark2);
+      padding: 40px 32px;
+      border-right: 1px solid rgba(254,219,0,0.1);
+      border-bottom: 1px solid rgba(254,219,0,0.1);
+      transition: background 0.3s;
+      position: relative;
+    }
+
+    .product-card:hover { background: var(--dark3); }
+
+    .product-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 56px;
+      color: rgba(254,219,0,0.15);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .product-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(254,219,0,0.12);
+      border: 1px solid rgba(254,219,0,0.3);
+      padding: 4px 10px;
+      border-radius: 2px;
+      margin-bottom: 16px;
+    }
+
+    .product-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 30px;
+      color: var(--white);
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .product-segment {
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .product-desc {
+      font-size: 13px;
+      color: #777;
+      line-height: 1.65;
+    }
+
+    /* ── DEALERS ── */
+    .dealers {
+      background: var(--dark2);
+      border-top: 1px solid rgba(254,219,0,0.12);
+    }
+
+    .dealer-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) { .dealer-content { grid-template-columns: 1fr; gap: 48px; } }
+
+    .dealer-info-card {
+      background: rgba(254,219,0,0.05);
+      border: 1px solid rgba(254,219,0,0.15);
+      border-radius: 4px;
+      padding: 40px;
+    }
+
+    .dealer-info-icon { font-size: 36px; margin-bottom: 20px; }
+
+    .dealer-info-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 24px;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .dealer-info-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold);
+      color: #001A3A;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    .dealer-url {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      margin-top: 12px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(254,219,0,0.12);
+      padding: 40px 24px;
+      text-align: center;
+    }
+
+    .footer-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      color: var(--gold);
+      letter-spacing: 3px;
+      margin-bottom: 8px;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+    }
+
+    /* ── DIVIDER ── */
+    .gold-line {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 24px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">✈ Aviation Division</div>
+
+    <div class="logo-block">
+      <div class="brand">GOODYEAR</div>
+      <div class="sub">Tire &amp; Rubber Company</div>
+    </div>
+
+    <div class="hero-division">Líder em Aviação Comercial no Brasil</div>
+
+    <h1 class="hero-headline">BORN<br><span>TO FLY.</span></h1>
+
+    <p class="hero-sub">
+      Mais de 100 anos desenvolvendo pneus para as condições mais extremas da aviação mundial. Da pista ao ar — a segurança começa aqui.
+    </p>
+
+    <div class="hero-tags">
+      <span class="hero-tag">🏆 Líder Aviação Comercial BR</span>
+      <span class="hero-tag">🌾 Líder Segmento Agrícola</span>
+      <span class="hero-tag">✈ Líder Aviação Geral</span>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat">
+        <div class="stat-num">100+</div>
+        <div class="stat-label">Anos de Inovação</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">200+</div>
+        <div class="stat-label">Modelos Certificados</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">150+</div>
+        <div class="stat-label">Países Atendidos</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">#1</div>
+        <div class="stat-label">Aviação Comercial BR</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE STRIP -->
+  <div style="background: var(--dark2); border-top: 1px solid rgba(254,219,0,0.12); border-bottom: 1px solid rgba(254,219,0,0.12); padding: 0 24px;">
+    <div class="container">
+      <div class="guarantee-banner" style="margin: 0; border: none; padding: 32px 0; background: transparent;">
+        <div class="guarantee-icon">🛡️</div>
+        <div>
+          <div class="guarantee-title">Garantia Vitalícia do Pneu*</div>
+          <div class="guarantee-desc">Segurança e tranquilidade do primeiro ao último pouso, durante todo o ciclo de vida da sua aeronave.</div>
+          <div style="font-size: 11px; color: var(--text-muted); margin-top: 10px; line-height: 1.5;">* A garantia está sujeita à análise técnica pelo time responsável.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MISSION -->
+  <section class="mission">
+    <div class="container">
+      <div class="mission-grid">
+        <div>
+          <div class="section-label">Nossa Missão</div>
+          <h2 class="section-title">Engenharia que <em>desafia</em><br>os limites da física.</h2>
+          <div class="gold-line"></div>
+          <p class="section-desc">
+            Cada pneu Goodyear Aviation é projetado para suportar forças que nenhum pneu comum jamais enfrentaria: impactos de pouso de centenas de toneladas, calor extremo nas frenagens de alta velocidade e pressões internas que chegam a 200 PSI. Confiança que vai além da pista — para todo o ciclo de vida da aeronave.
+          </p>
+        </div>
+        <div class="mission-features">
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <div>
+              <div class="feature-title">Resistência ao Impacto</div>
+              <div class="feature-desc">Estrutura radial multicamada que absorve cargas superiores a 200 toneladas no momento do pouso, repetidamente.</div>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🌡️</div>
+            <div>
+              <div class="feature-title">Controle Térmico</div>
+              <div class="feature-desc">Compostos proprietários dissipam calor durante frenagens a mais de 280 km/h, mantendo integridade estrutural.</div>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <div>
+              <div class="feature-title">Certificação Global</div>
+              <div class="feature-desc">Homologado pela FAA, EASA e mais de 50 autoridades de aviação civil e militar ao redor do mundo.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products">
+    <div class="container">
+      <div class="section-label">Linha Aviation</div>
+      <h2 class="section-title">O pneu <em>certo</em> para cada operação.</h2>
+
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-num">01</div>
+          <div class="product-badge">Aviação Comercial · Larga Escala</div>
+          <div class="product-name">Flight Leader</div>
+          <div class="product-segment">Boeing 737, 777 · Airbus A320</div>
+          <div class="product-desc">Alta resistência à fadiga em operações de alta frequência. Referência absoluta na aviação comercial brasileira.</div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-num">02</div>
+          <div class="product-badge">Aviação Comercial · Alta Durabilidade</div>
+          <div class="product-name">Flight Radial</div>
+          <div class="product-segment">Aeronaves Comerciais · Construção Radial</div>
+          <div class="product-desc">Tecnologia radial de última geração para operações comerciais que exigem máxima vida útil e consistência de desempenho.</div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-num">03</div>
+          <div class="product-badge">Jatos Executivos · Alta Performance</div>
+          <div class="product-name">Flight Special II</div>
+          <div class="product-segment">Jatos Corporativos</div>
+          <div class="product-desc">Leveza e durabilidade para jatos corporativos. Otimizado para pistas curtas e voos de alta altitude.</div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-num">04</div>
+          <div class="product-badge">Aviação Geral · Turbohélices</div>
+          <div class="product-name">Flight Custom III</div>
+          <div class="product-segment">Aviação Geral</div>
+          <div class="product-desc">Versátil para pistas variadas — asfalto, cascalho e terra batida — com máxima aderência e controle.</div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-num">05</div>
+          <div class="product-badge">Defesa · Aviação Militar</div>
+          <div class="product-name">Flight Eagle</div>
+          <div class="product-segment">Aviação Militar</div>
+          <div class="product-desc">Usado pelas forças armadas dos EUA e aliados. Aprovado para operações táticas em condições extremas.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DEALERS -->
+  <section class="dealers">
+    <div class="container">
+      <div class="dealer-content">
+        <div>
+          <div class="section-label">Rede de Revendedores</div>
+          <h2 class="section-title">Encontre um revendedor<br><em>perto de você.</em></h2>
+          <div class="gold-line"></div>
+          <p class="section-desc">
+            A Goodyear possui revendedores autorizados espalhados por todo o Brasil. Acesse nosso site e encontre o parceiro mais próximo para adquirir seus pneus com atendimento especializado.
+          </p>
+        </div>
+        <div class="dealer-info-card">
+          <div class="dealer-info-icon">📍</div>
+          <div class="dealer-info-title">Cobertura Nacional</div>
+          <div class="dealer-info-desc">
+            Rede de revendedores autorizados em todos os estados do Brasil — do Sul ao Norte, do litoral ao interior. Suporte técnico especializado onde sua operação estiver.
+          </div>
+          <a href="https://www.goodyearaviation.com/" class="btn-primary" target="_blank">
+            Acessar o Site →
+          </a>
+          <div class="dealer-url">www.goodyearaviation.com</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">GOODYEAR AVIATION</div>
+    <div class="footer-copy">© 2025 Goodyear Tire &amp; Rubber Company — Todos os direitos reservados</div>
+  </footer>
+
+
+
+</body></html>
